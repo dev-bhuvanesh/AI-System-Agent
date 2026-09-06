@@ -1,0 +1,8 @@
+{
+  "uuid": "system-agent@local",
+  "name": "System Agent Overlay",
+  "description": "Keeps the System Agent GTK window top-centered and above application windows on Wayland.",
+  "version": 1,
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "settings-schema": "org.gnome.shell.extensions.system-agent"
+}

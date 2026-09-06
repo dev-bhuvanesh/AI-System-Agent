@@ -1,0 +1,737 @@
+/* Dark, compact visual language for the floating desktop component. */
+
+window,
+.agent-window,
+.agent-window.background {
+  background: transparent;
+  background-color: transparent;
+}
+
+.overlay-shell {
+  background-color: rgba(4, 7, 12, 0.98);
+  border: 1px solid rgba(123, 135, 153, 0.64);
+  border-radius: 28px;
+  box-shadow: 0 0 5px 1px rgba(111, 124, 143, 0.44),
+              0 0 16px 2px rgba(94, 106, 124, 0.27),
+              0 0 36px 4px rgba(70, 80, 96, 0.14),
+              0 16px 40px rgba(0, 0, 0, 0.48);
+  color: #f3f6ff;
+  padding: 1px;
+}
+
+.overlay-shell.overlay-quick {
+  border-radius: 52px;
+}
+
+/* Keep the launcher compact on every monitor. */
+.overlay-shell.overlay-quick .prompt-row {
+  min-height: 0;
+  padding: 2px 7px;
+}
+
+.overlay-shell.overlay-quick .icon-button {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.overlay-shell.overlay-quick .send-button {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 18px;
+}
+
+.overlay-shell.overlay-quick .send-button image {
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.overlay-shell.overlay-quick .prompt-editor,
+.overlay-shell.overlay-quick .prompt-placeholder {
+  font-size: 14px;
+}
+
+.overlay-shell.overlay-expanded {
+  border-radius: 28px;
+}
+
+.prompt-row {
+  min-height: 74px;
+  padding: 8px 17px;
+}
+
+.overlay-expanded .prompt-row {
+  min-height: 58px;
+}
+
+/* The supplied references were captured on 1536/1600px-wide desktops. Keep
+ * the same proportions on smaller 1280px desktops instead of retaining the
+ * large reference pixel dimensions. */
+.overlay-shell.overlay-small .prompt-row {
+  min-height: 0;
+  padding: 2px 7px;
+}
+
+.overlay-shell.overlay-small .icon-button {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.overlay-shell.overlay-small .send-button {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 18px;
+}
+
+.overlay-shell.overlay-small .send-button image {
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.overlay-shell.overlay-small .prompt-editor,
+.overlay-shell.overlay-small .prompt-placeholder {
+  font-size: 14px;
+}
+
+.overlay-shell.overlay-small .task-view {
+  padding: 8px 19px 10px;
+}
+
+.overlay-shell.overlay-small .user-bubble-text,
+.overlay-shell.overlay-small .agent-message {
+  font-size: 12px;
+}
+
+.overlay-shell.overlay-small .process-step-title {
+  font-size: 13px;
+}
+
+.overlay-shell.overlay-small .process-step-detail {
+  font-size: 11px;
+}
+
+.overlay-shell.overlay-small .output-text {
+  font-size: 10px;
+}
+
+.prompt-divider {
+  background: rgba(128, 150, 184, 0.24);
+}
+
+.icon-button,
+.text-button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #aebbd5;
+}
+
+.icon-button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 22px;
+  color: #f1f5f9;
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.icon-button:hover {
+  background: rgba(132, 164, 219, 0.12);
+  color: #e7efff;
+}
+
+.prompt-editor {
+  background: transparent;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #f5f7ff;
+  font-size: 18px;
+  caret-color: #6ba4ff;
+}
+
+.prompt-editor-area {
+  background: rgba(0, 0, 0, 0.24);
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 9px;
+}
+
+.prompt-editor selection {
+  background-color: rgba(8, 124, 255, 0.42);
+}
+
+.prompt-placeholder {
+  color: #7d8aa4;
+  font-size: 18px;
+}
+
+.send-button {
+  min-width: 58px;
+  min-height: 58px;
+  border-radius: 29px;
+  background: #087cff;
+  color: white;
+  padding: 0;
+  box-shadow: 0 0 12px rgba(8, 124, 255, 0.42);
+}
+
+.send-button image {
+  min-width: 26px;
+  min-height: 26px;
+}
+
+.send-button:hover {
+  background: #1688ff;
+  box-shadow: 0 0 20px rgba(8, 124, 255, 0.68);
+  transform: scale(1.04);
+}
+
+.send-button.stop-button {
+  background: #087cff;
+}
+
+.send-button.stop-button:hover {
+  background: #1688ff;
+  box-shadow: 0 0 20px rgba(8, 124, 255, 0.68);
+}
+
+.send-button.stop-button:disabled {
+  background: #087cff;
+  opacity: 0.78;
+}
+
+.section-divider {
+  background: rgba(130, 158, 206, 0.16);
+}
+
+.task-view {
+  background-color: rgba(4, 7, 12, 0.98);
+  padding: 10px 24px 13px;
+}
+
+.response-view {
+  background-color: rgba(4, 7, 12, 0.98);
+  min-height: 0;
+}
+
+.chat-scroll {
+  background: rgba(4, 7, 12, 0.98);
+  background-color: rgba(4, 7, 12, 0.98);
+}
+
+.chat-scroll viewport {
+  background-color: rgba(4, 7, 12, 0.98);
+}
+
+.response-scroll {
+  background-color: transparent;
+  min-height: 0;
+}
+
+.response-scroll viewport {
+  background-color: transparent;
+}
+
+.message-meta,
+.section-label {
+  color: #8190ae;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-label {
+  color: #1688ff;
+}
+
+.user-bubble {
+  background: rgba(28, 78, 143, 0.96);
+  border: 1px solid rgba(99, 164, 255, 0.18);
+  border-radius: 18px 18px 6px 18px;
+  color: #f1f3f7;
+  padding: 9px 13px 11px;
+  font-size: 14px;
+  box-shadow: inset 0 1px 0 rgba(151, 202, 255, 0.08);
+}
+
+.user-bubble-meta {
+  color: rgba(225, 239, 255, 0.62);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.user-bubble-text {
+  color: #f1f5f9;
+  font-size: 14px;
+}
+
+.user-actions {
+  min-height: 20px;
+  margin-top: -1px;
+  padding-right: 2px;
+}
+
+.user-action-button {
+  min-width: 18px;
+  min-height: 20px;
+  padding: 0 1px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #a8b0bd;
+  font-size: 15px;
+}
+
+.user-action-button:hover {
+  background: rgba(135, 158, 197, 0.12);
+  color: #eef4ff;
+}
+
+.agent-message {
+  color: #dbe4f7;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.response-action-bar {
+  min-height: 22px;
+  margin-top: -13px;
+  padding-left: 0;
+}
+
+.response-copy-button {
+  min-width: 18px;
+  min-height: 22px;
+  padding: 0 6px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: #9da6b5;
+  font-size: 12px;
+}
+
+.response-copy-button:hover {
+  background: rgba(135, 158, 197, 0.12);
+  color: #e1eaff;
+}
+
+.response-copy-confirmed {
+  color: #69a5ff;
+}
+
+.completion-status {
+  min-height: 22px;
+  margin-top: -8px;
+}
+
+.completion-status-icon,
+.completion-status-label {
+  color: #8190ae;
+  font-size: 12px;
+}
+
+.completion-status-icon {
+  min-width: 18px;
+  color: #6ba4ff;
+}
+
+.plan-card {
+  background: rgba(10, 15, 25, 0.76);
+  border: 1px solid rgba(111, 145, 206, 0.17);
+  border-radius: 14px;
+  padding: 12px 13px;
+}
+
+.plan-summary {
+  color: #dbe4f7;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.plan-action {
+  min-height: 22px;
+}
+
+.plan-marker {
+  min-width: 14px;
+  color: #6ba4ff;
+  font-size: 16px;
+}
+
+.plan-action-text {
+  color: #aebbd5;
+  font-size: 12px;
+}
+
+.thinking-row {
+  min-height: 26px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.thinking-icon {
+  min-width: 18px;
+  color: #e98b68;
+  font-size: 16px;
+}
+
+.thinking-label {
+  color: #a6a6a8;
+  font-size: 13px;
+}
+
+.scroll-down-button {
+  min-width: 38px;
+  min-height: 38px;
+  border-radius: 19px;
+  padding: 0;
+  background: rgba(25, 27, 31, 0.96);
+  border: 1px solid rgba(160, 170, 190, 0.22);
+  color: #c8d0dc;
+  font-size: 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.36);
+}
+
+.scroll-down-button:hover {
+  background: rgba(44, 47, 54, 0.98);
+  color: #f2f5fb;
+}
+
+.task-actions {
+  margin-top: -3px;
+  margin-bottom: 1px;
+  padding: 1px 2px;
+}
+
+.task-status {
+  color: #6ba4ff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.cancel-button {
+  background: rgba(255, 123, 137, 0.08);
+  border: 1px solid rgba(255, 135, 149, 0.28);
+  border-radius: 9px;
+  color: #ffabb5;
+  font-size: 12px;
+  min-height: 30px;
+  padding: 0 10px;
+}
+
+.cancel-button:hover {
+  background: rgba(255, 123, 137, 0.16);
+  border-color: rgba(255, 135, 149, 0.46);
+  color: #ffd9dd;
+}
+
+.process-log {
+  background: transparent;
+  border: none;
+  margin-top: 2px;
+}
+
+.process-log-toolbar {
+  min-height: 28px;
+  padding: 1px 3px 2px;
+}
+
+.process-log-label {
+  color: #8fa4c5;
+  font-size: 11px;
+  letter-spacing: 0.35px;
+}
+
+.process-log-scroll,
+.process-log-scroll viewport {
+  background: transparent;
+  border: none;
+}
+
+.process-step-list {
+  background: transparent;
+  padding: 0;
+}
+
+.process-step {
+  background: transparent;
+  border: none;
+}
+
+.process-step-toggle {
+  min-height: 28px;
+  padding: 1px 3px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #d7e0ef;
+  box-shadow: none;
+}
+
+.process-step-toggle:hover {
+  background: rgba(93, 128, 188, 0.11);
+}
+
+.process-step-icon,
+.process-step-spinner {
+  min-width: 18px;
+  color: #8fa4c5;
+}
+
+.process-step-running .process-step-spinner {
+  color: #6ba4ff;
+}
+
+.process-step-completed .process-step-icon {
+  color: #54cf96;
+}
+
+.process-step-warning .process-step-icon {
+  color: #f3bf69;
+}
+
+.process-step-failed .process-step-icon {
+  color: #ff8795;
+}
+
+.process-step-cancelled .process-step-icon {
+  color: #9aa8c0;
+}
+
+.process-step-title {
+  color: #dfe8fa;
+  font-size: 12px;
+}
+
+.process-step-detail {
+  color: #7887a3;
+  font-size: 11px;
+}
+
+.process-step-chevron {
+  min-width: 18px;
+  color: #8798b3;
+  font-size: 14px;
+}
+
+.process-step-details {
+  margin: 0 24px 5px 29px;
+  padding: 5px 8px;
+  background: rgba(10, 15, 25, 0.48);
+  border-left: 1px solid rgba(111, 145, 206, 0.28);
+}
+
+.process-detail-line {
+  color: #a9b7ce;
+  font-size: 11px;
+}
+
+.process-detail-code {
+  color: #c4d0e4;
+  font-family: monospace;
+}
+
+.process-final {
+  min-height: 28px;
+  padding: 4px 3px;
+  font-size: 12px;
+}
+
+.process-final-success {
+  color: #54cf96;
+}
+
+.process-final-failure {
+  color: #ff9aa6;
+}
+
+.software-plan-card {
+  background: rgba(10, 15, 25, 0.78);
+  border: 1px solid rgba(111, 145, 206, 0.22);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.software-plan-title {
+  color: #eef4ff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.software-plan-summary {
+  color: #d2ddf1;
+  font-size: 13px;
+}
+
+.software-plan-meta,
+.software-plan-details,
+.software-plan-command,
+.software-plan-impact,
+.software-state-summary {
+  color: #8998b2;
+  font-size: 12px;
+}
+
+.software-plan-command {
+  color: #b9c9e4;
+  font-family: monospace;
+}
+
+.software-plan-impact {
+  color: #cbd7ea;
+}
+
+.software-state-card {
+  background: rgba(10, 15, 25, 0.78);
+  border: 1px solid rgba(111, 145, 206, 0.22);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.software-state-action {
+  min-height: 30px;
+  padding: 4px 11px;
+  border-radius: 8px;
+  background: rgba(112, 134, 171, 0.14);
+  color: #cbd7ea;
+}
+
+.software-plan-actions {
+  margin-top: 3px;
+}
+
+.software-approve-button,
+.software-cancel-button,
+.software-details-button {
+  min-height: 30px;
+  padding: 4px 11px;
+  border-radius: 8px;
+}
+
+.software-approve-button {
+  background: #087cff;
+  color: #ffffff;
+}
+
+.software-cancel-button,
+.software-details-button {
+  background: rgba(112, 134, 171, 0.14);
+  color: #cbd7ea;
+}
+
+.output-section {
+  margin-top: -9px;
+}
+
+.output-frame {
+  background: rgba(5, 9, 17, 0.78);
+  background-color: rgba(5, 9, 17, 0.92);
+  border: 1px solid rgba(111, 145, 206, 0.15);
+  border-radius: 11px;
+  box-shadow: inset 0 1px 0 rgba(130, 158, 206, 0.04);
+}
+
+.output-frame viewport,
+.output-frame textview,
+.output-frame textview.view,
+.output-text {
+  background-color: transparent;
+  border-radius: 11px;
+}
+
+.output-section .text-button {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.output-text {
+  color: #c4d0e4;
+  font-size: 13px;
+}
+
+.output-cursor {
+  color: #1688ff;
+  font-size: 13px;
+}
+
+.fix-card {
+  background: rgba(18, 24, 36, 0.82);
+  border: 1px solid rgba(255, 179, 92, 0.25);
+  border-radius: 13px;
+  padding: 12px 13px;
+}
+
+.fix-title {
+  color: #f3f6ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fix-rationale,
+.fix-effect {
+  color: #aebbd0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.technical-details-button {
+  min-height: 25px;
+  padding: 0 2px;
+  background: transparent;
+  color: #8eb7f2;
+  font-size: 11px;
+}
+
+.technical-details-button:hover {
+  color: #c3dcff;
+}
+
+.technical-details {
+  color: #8291aa;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 2px 4px 5px;
+}
+
+.fix-command {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 7px;
+  color: #f0c77e;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 7px 8px;
+}
+
+.fix-actions {
+  margin-top: 2px;
+}
+
+.fix-button,
+.fix-cancel {
+  min-height: 29px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.fix-button {
+  background: #1688ff;
+  color: #ffffff;
+}
+
+.fix-button:hover {
+  background: #2c97ff;
+}
+
+.fix-cancel {
+  background: rgba(142, 154, 177, 0.1);
+  border: 1px solid rgba(142, 154, 177, 0.22);
+  color: #b8c2d4;
+}

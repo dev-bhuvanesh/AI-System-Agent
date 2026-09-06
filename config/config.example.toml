@@ -1,0 +1,47 @@
+# Copy to ~/.config/system-agent/config.toml to customize the overlay.
+
+shortcut = "<Super>space"
+
+[llm]
+backend = "ollama"
+base_url = "http://localhost:11434"
+model = "qwen2.5:7b"
+stream = true
+timeout_seconds = 180
+keep_alive = "5m"
+context_size = 4096
+temperature = 0.2
+max_tokens = 512
+top_p = 0.9
+# Qwen 7B/8B-class local-agent defaults: focused sampling, bounded KV cache.
+top_k = 40
+min_p = 0.05
+repeat_penalty = 1.05
+num_keep = 768
+seed = 0
+threads = 0       # 0 = hardware-aware CPU thread count
+batch_size = 512  # reduced automatically on low-memory systems
+gpu_layers = 0    # 0 = hardware-aware CPU/all-fitting-GPU selection; -1 = all
+hardware_auto_tune = true
+
+[window]
+width = 430
+height = 360
+quick_width = 420
+quick_height = 50
+min_width = 420
+min_height = 50
+max_width = 1180
+max_height = 900
+
+[tools]
+# File tools may only access these roots. General write/destructive/network/
+# terminal tools remain disabled. Curated software actions still require an
+# explicit Install/Update/Remove/Download confirmation in the chat UI.
+allowed_roots = ["~"]
+auto_approve_read_only = true
+allow_network = false
+allow_write = false
+allow_destructive = false
+allow_terminal = false
+max_concurrent = 1

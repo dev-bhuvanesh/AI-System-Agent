@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.system-agent" path="/org/gnome/shell/extensions/system-agent/">
+    <key name="shortcut" type="as">
+      <default>["&lt;Super&gt;space"]</default>
+      <summary>System Agent shortcut metadata</summary>
+      <description>Reserved metadata for the activation shortcut, which is installed as a GNOME custom keybinding.</description>
+    </key>
+  </schema>
+</schemalist>
